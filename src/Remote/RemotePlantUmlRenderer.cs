@@ -15,7 +15,7 @@ namespace PlantUml.Net.Remote
             this.renderUrlCalculator = renderUrlCalculator;
         }
 
-        public async Task<byte[]> RenderAsync(string code, OutputFormat outputFormat, CancellationToken cancellationToken = default)
+        public async Task<byte[]> RenderAsync(string code, OutputFormat outputFormat, CancellationToken cancellationToken = default(CancellationToken))
         {
             var renderUrl = renderUrlCalculator.GetRenderUrl(code, outputFormat);
 

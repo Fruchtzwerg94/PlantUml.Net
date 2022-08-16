@@ -20,7 +20,7 @@ namespace PlantUml.Net.Local
             this.renderUrlCalculator = renderUrlCalculator;
         }
 
-        public async Task<byte[]> RenderAsync(string code, OutputFormat outputFormat, CancellationToken cancellationToken = default)
+        public async Task<byte[]> RenderAsync(string code, OutputFormat outputFormat, CancellationToken cancellationToken = default(CancellationToken))
         {
             string command = commandProvider.GetCommand(outputFormat);
             var processResult = await jarRunner.RunJarWithInputAsync(code, cancellationToken, command, "-pipe", "-charset UTF-8")
